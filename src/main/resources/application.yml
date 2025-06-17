@@ -1,0 +1,12 @@
+server:
+     port: 5000
+spring:
+     jpa:
+       show-sql: true
+       database-platform: org.hibernate.dialect.MySQL8Dialect
+       hibernate:
+          ddl-auto: update
+     datasource:
+         url: jdbc:mysql://awseb-e-rjsmyz32vq-stack-awsebrdsdatabase-dshobdcescb7.cdyyi402ic3i.ap-northeast-2.rds.amazonaws.com:3306/ebdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+         username: ebroot
+         password: 11111111
