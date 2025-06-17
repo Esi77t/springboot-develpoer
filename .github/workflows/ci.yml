@@ -1,25 +1,25 @@
-# 1. 워크플로우의 이름을 CI로 설정
-name: CI
+#워크플로우의 이름을 CI로 설정
+name : CI
 
-# 2. 워크플로가 시작될 조건 지정
-# main 브랜치에 push 될 때 워크플로우가 실행됨
+#2. 워크플로우가 시작될 조건을 지정
+# main 브랜치에 push될 때 워크플로우가 실행됨
 on:
-    push:
-        branches: [ main ]
+  push:
+    branches: [main]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-java@v3
-              with:
-                distribution: 'corretto'
-                java-version: '17'
-            
-            - name: Grant execute permission for gradlew
-              run: chmod +x gradlew
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: '17'
 
-            - name: Build with Gradle
-              run: ./gradlew clean build
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew #chmod +x 명령어를 통해 gradlew에 실행권한을 부여한다.
+
+      - name: Build with Gradle
+        run: ./gradlew clean build #프로젝트를 빌드하는 명령어
